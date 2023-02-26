@@ -15,7 +15,6 @@ animations = [ {
 } ]
 
 [node name="PlayerFakePhysics" type="Area2D"]
-position = Vector2( 503, 343 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -27,3 +26,8 @@ polygon = PoolVector2Array( -8, -38, -12, -11, -36, 1, -41, -1, -44, -7, -50, -6
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="PlayerShipType"]
 frames = SubResource( 1 )
+
+[node name="Gun" type="Position2D" parent="."]
+position = Vector2( 0, -20 )
+
+[node name="Lasers" type="Node" parent="."]
