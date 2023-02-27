@@ -9,6 +9,7 @@ var screensize
 
 func _ready():
 	screensize = get_viewport().get_visible_rect().size
+	print(screensize)
 
 func get_input():
 	if Input.is_action_pressed("move_forward"):

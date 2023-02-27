@@ -3,6 +3,14 @@ extends Area2D
 var LASER = preload("res://scenes/game/Laser/Laser.tscn")
 
 var vel = Vector2.ZERO
+var screen_size
+var player_size
+
+func _ready():
+	screen_size = OS.get_window_size()
+	print(screen_size)
+	player_size = $PlayerShipType/PlayerSprite.get_rect().size
+	print(player_size)
 
 func _process(delta):
 	if Input.is_action_pressed("turn_left"):
@@ -19,3 +27,7 @@ func _process(delta):
 		l.rotation = rotation
 		$Lasers.add_child(l)
 	position += vel
+	if position.x + player_size.x < -5:
+		position.x = screen_size.x + player_size.x
+	if position.x - player_size.x > screen_size.x + 5:
+		position.x = -player_size.x
