@@ -27,7 +27,12 @@ func _process(delta):
 		l.rotation = rotation
 		$Lasers.add_child(l)
 	position += vel
-	if position.x + player_size.x < -5:
+	if position.x + player_size.x < -2:
 		position.x = screen_size.x + player_size.x
-	if position.x - player_size.x > screen_size.x + 5:
+	if position.x - player_size.x > screen_size.x + 2:
 		position.x = -player_size.x
+	if position.y + player_size.y < -2:
+		position.y = screen_size.y + player_size.y
+	if position.y - player_size.y > screen_size.y + 2:
+		position.y = -player_size.y 
+		
